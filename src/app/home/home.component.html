@@ -1,17 +1,10 @@
 <div class="container">
-    <form [formGroup]="myForm">
-        <input type="text"
-               class="form-control"
-               id="name"
-               formControlName="name"
-        >
-        <div [hidden]="myForm.controls.name.valid || myForm.controls.name.pristine"
-             class="alert alert-danger">
-            Name is required
+    <form ngNoForm action="https://www.google.com" target="_blank" method="GET">
+        <input name="q" type="search" [formControl]="searchControl">
+        <div [hidden]="searchControl.valid || searchControl.pristine"
+            class="alert alert-danger">
+            <p>Name is required</p>
         </div>
-        <button type="submit">Submit</button>
+        <button [disabled]="!myForm.valid" type="submit">Search</button>
     </form>
-
-    <!-- Can do individual form control-->
-    <!--<input type="search" [formControl]="searchControl">-->
 </div>

@@ -8,7 +8,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 export class HomeComponent {
 
+    searchControl = new FormControl("", Validators.required);
     myForm = new FormGroup({
-        name: new FormControl("", Validators.required)
+        searchControl: this.searchControl
     });
 }
